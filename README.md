@@ -1,3 +1,3 @@
-# neatex-wallet
+# NeatSend
 
-Non-custodial Web 3.0 wallet that enables you to interact with Neatio Network.
+Web 3.0 wallet extension that enables you to interact with the Neatio Network.

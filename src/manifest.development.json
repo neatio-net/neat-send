@@ -1,0 +1,47 @@
+{
+  "manifest_version": 3,
+  "name": "NeatSend",
+  "description": "Web 3.0 browser extension that enables you to interact with the Neatio Network.",
+  "version": "1.0.0",
+  "background": {
+    "service_worker": "/background.js"
+  },
+  "icons": {
+    "48": "icons/icon_48.png",
+    "128": "icons/icon_128.png"
+  },
+  "permissions": [
+    "notifications"
+    
+  ],
+  "host_permissions": [
+    "http://*/",
+    "https://*/"
+  ],
+  "omnibox": { "keyword" : "neat" },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "inpage.js"
+      ],
+      "matches": [
+        "<all_urls>"
+      ],
+      "extension_ids": []
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "http://localhost/*"
+      ],
+      "js": [
+        "content.js"
+      ]
+    }
+  ],
+  "options_page": "options.html"
+}
