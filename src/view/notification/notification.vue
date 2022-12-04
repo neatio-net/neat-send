@@ -1,5 +1,5 @@
 <template>
-  <div style="width: 360px;height: 600px;overflow: scroll;">
+  <div style="width: 360px;height: 600px;">
     <router-view></router-view>
     <Loginshow :windowis="is" :show="show"></Loginshow>
   </div>
@@ -23,7 +23,7 @@
           to: '',
           value: '',
           fee: '',
-          hash: '0x3938d81235e7ec09a859db3a263e7951dc984640a60fcd7a95174442d6669353',
+          hash: '',
           gasLimit: '',
           gasPrice: '',
           from: '',

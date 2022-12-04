@@ -33,12 +33,12 @@
 
                     </van-cell-group>
                     <div style="margin: 16px;">
-                        <van-button @click="privatekeySave" round block type="info">{{$t('l.account.import.btn')}}
+                        <van-button @click="privatekeySave" color="#00ffff">{{$t('l.account.import.btn')}}
                         </van-button>
                     </div>
                 </van-tab>
-                               <van-tab title="Mnemonic">Mnemonic</van-tab>
-                           <van-tab title="Address">Address</van-tab>
+  <!-- <van-tab title="Mnemonic">Mnemonic</van-tab>
+        <van-tab title="Address">Address</van-tab> -->
             </van-tabs>
         </div>
     </div>
@@ -169,5 +169,7 @@
 </script>
 
 <style scoped>
+
+
 
 </style>

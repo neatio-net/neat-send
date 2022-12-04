@@ -25,24 +25,11 @@
                 </van-col>
             </van-row>
         </div>
-        <div style="height:64px;background: #fff;width: 100%;border-bottom: 1px solid #ebedf0;">
+        <div style="height:64px;background: #192841;width: 100%;border-bottom: 1px solid #ebedf0;">
             <van-col @click="connectListfn" span="6" class="addrcopy"
                      style="text-align: center;height: 100%;cursor: pointer">
                 <div style="margin-top: 18px;">
-                    <i v-if="isconnect"
-                       style="color: rgb(33, 158, 55);float: left; margin-top: 2px;margin-right: 4px; margin-left: 30px;font-size: 22px;"
-                       class="el-icon-connection"></i>
-                                       <!-- <div style="word-break:break-all;color: rgb(100, 101, 102);float: left;width: 54px;">
-                                           Connected
-                                       </div> -->
-                                       <i style="color: #646566;float: left; margin-top: 6px;margin-right: 4px; margin-left: 8px;font-size: 18px;"
-                                          class="el-icon-connection"></i>
-                    <i v-if="!isconnect"
-                       style="color: #646566;float: left; margin-top: 2px;margin-right: 4px; margin-left: 30px;font-size: 22px;"
-                       class="el-icon-connection"></i>
-                                                           <!-- <div style="word-break:break-all;color: rgb(100, 101, 102);float: left;width: 54px">
-                                                               Not Connected
-                                                           </div> -->
+                <!-- LOGO -->
                 </div>
 
             </van-col>
@@ -70,11 +57,11 @@
                             Lock
                         </el-dropdown-item>
 
-                        <el-dropdown-item command="addChain" icon="el-icon-share">
+                        <el-dropdown-item @click="switchaccountshowfn" icon="el-icon-share">
                             Wallets
                         </el-dropdown-item>
 
-                        <el-dropdown-item command="viewAsset" icon="el-icon-user">
+                        <el-dropdown-item command="accountDetails" icon="el-icon-user">
                             Details
                         </el-dropdown-item>
                         <el-dropdown-item command="viewAsset" icon="el-icon-paperclip">
@@ -139,26 +126,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- <div style="text-align: center;margin-top: 20px">
-                        <div style="color: #646566;font-size: 14px">
-                            {{$t('l.index.txt')}}
-                        </div>
-                        <div>
-                            <el-button @click="importToken" style="font-size: 16px;    margin-top: 10px;" type="text">
-                                {{$t('l.token.import.title')}}
-                            </el-button>
-                        </div>
-                        <div>
-                            {{$t('l.index.txt1')}}
-                            <a href="mailto:contact@gmail.com">
-                                <el-button type="text" style="font-size: 16px">Neatio Support</el-button>
-                            </a>
-                        </div>
-                        <div style="height: 20px;width: 100%">
-
-                        </div>
-                    </div> -->
-
                 </van-tab>
                 <van-tab title="NFT">
                     <van-collapse v-model="activeNames" v-if="nftlist.length!=0">
@@ -208,7 +175,7 @@
                 :style="{ width: '100%',height: '100%' }">
             <div style="margin-top: 50px;position: relative">
                 <div style="height: 502px;overflow-y: scroll">
-                    <div v-for="item in accountlist" @click="switchaccount(item)" :key="item.key" style="overflow: hidden;cursor: pointer;background-color: #fff;display: flex;flexDirection: row;align-items: center;position: relative;
+                    <div v-for="item in accountlist" @click="switchaccount(item)" :key="item.key" style="overflow: hidden;cursor: pointer;background-color: #192841;display: flex;flexDirection: row;align-items: center;position: relative;
             margin: 14px;margin-top: 4px;height: 80px;border-radius: 5px;padding-bottom: 0;padding-top: 0;position: relative;box-shadow: 0 0 9px rgba(14, 61, 118, .16);">
                         <div style="float: left;overflow: hidden;position: relative;margin-left: 14px;cursor: pointer
                         ;width: 70px;height: 52px;
@@ -241,11 +208,11 @@
                 </div>
                 <div style="font-size: 16px;width:100%;bottom: 0;height: 48px; border-top:1px solid #efeff4;line-height: 48px;text-align: center;">
                     <div @click="accountImport"
-                         style="cursor: pointer;width: 50%;background-color: #fff;float: left;height: 100%;color: #3C7BFF">
+                         style="cursor: pointer;width: 50%;background-color: #192841;float: left;height: 100%;color: #3C7BFF">
                         {{ $t('l.index.txt2')}}
                     </div>
                     <div @click="accountCreate"
-                         style="cursor: pointer;width: 50%;background-color: #3C7BFF;float: left;height: 100%;color: #fff;">
+                         style="cursor: pointer;width: 50%;background-color: #3C7BFF;float: left;height: 100%;color: #192841;">
                         {{ $t('l.index.txt3')}}
                     </div>
                 </div>
@@ -287,7 +254,7 @@
                 <div style="text-align: center">
                     <canvas id="canvas"></canvas>
                 </div>
-                <div style="height:64px;padding-bottom: 40px;background: #fff;width: 100%;border-bottom: 1px solid #ebedf0;">
+                <div style="height:64px;padding-bottom: 40px;background: #192841;width: 100%;border-bottom: 1px solid #ebedf0;">
                     <van-col span="4"></van-col>
                     <van-col span="16" class="addrcopy" style="text-align: center;height: 100%;cursor: pointer"
                              v-clipboard:copy="$store.state.wallet.addr"
@@ -337,7 +304,7 @@
                         effect="dark">
                 </el-alert>
 
-                <div style="height:86px;padding-bottom: 40px;background: #fff;width: 100%">
+                <div style="height:86px;padding-bottom: 40px;background: #192841;width: 100%">
                     <van-col span="2"></van-col>
                     <van-col span="20" class="addrcopy"
                              style="border: 1px solid #ebedf0;;text-align: center;height: 100%;cursor: pointer"
@@ -399,7 +366,7 @@
                 :style="{ width: '100%',height: '100%' }">
             <div style="margin-top: 50px;position: relative">
                 <div style="height: 502px;overflow-y: scroll">
-                    <div @click="switchChainfn(item)" v-for="(item,index) in networklist" :key="index" style="overflow: hidden;cursor: pointer;background-color: #fff;display: flex;flexDirection: row;align-items: center;position: relative;
+                    <div @click="switchChainfn(item)" v-for="(item,index) in networklist" :key="index" style="overflow: hidden;cursor: pointer;background-color: #192841;display: flex;flexDirection: row;align-items: center;position: relative;
             margin: 14px;margin-top: 4px;height: 80px;border-radius: 5px;padding-bottom: 0;padding-top: 0;position: relative;box-shadow: 0 0 9px rgba(14, 61, 118, .16);">
                         <img style="width: 52px;margin-left: 14px;border-radius: 50%"
                              :src="item.icon"/>
@@ -428,7 +395,7 @@
                 </div>
                 <div style="font-size: 16px;width:100%;bottom: 0;height: 48px; border-top:1px solid #efeff4;line-height: 48px;text-align: center;">
                     <div @click="addChain=true"
-                         style="cursor: pointer;width: 100%;background-color: #3C7BFF;float: left;height: 100%;color: #fff;">
+                         style="cursor: pointer;width: 100%;background-color: #3C7BFF;float: left;height: 100%;color: #192841;">
                         {{ $t('l.index.txt9')}}
                     </div>
                 </div>
@@ -499,7 +466,7 @@
                     <van-cell style="visibility: hidden;padding: 0 !important;" class="walletxt" :border="false"
                               title=""/>
                 </div>
-                <div style="border-top: 1px solid #ebedf0;background-color: #fff;height: 44px;padding: 10px 0;width: 100%;position: fixed;bottom: 0">
+                <div style="border-top: 1px solid #ebedf0;background-color: #192841;height: 44px;padding: 10px 0;width: 100%;position: fixed;bottom: 0">
                     <el-row v-if="updateChainModel.chainId!=$store.state.network.chainId">
                         <el-col :span="12">
                             <div style="width: 80%;margin-left: 10%">
@@ -533,7 +500,7 @@
                     Connect List
                 </div>
                 <div style="margin-top: 20px">
-                    <div v-if="taburl!=''" style="overflow: hidden;cursor: pointer;background-color: #fff;display: flex;flexDirection: row;align-items: center;position: relative;
+                    <div v-if="taburl!=''" style="overflow: hidden;cursor: pointer;background-color: #192841;display: flex;flexDirection: row;align-items: center;position: relative;
             margin: 14px;margin-top: 4px;border-radius: 5px;padding-bottom: 0;padding-top: 0;position: relative;box-shadow: 0 0 9px rgba(14, 61, 118, .16);">
                         <div style="padding: 20px 0px;overflow: hidden;height: 100%;width: 100%;margin-left: 4px;margin-right: 14px">
                             <div style="overflow: hidden">
@@ -550,7 +517,7 @@
                             </el-button>
                         </div>
                     </div>
-                    <div v-for="(item,index) in connectlist" :key="index" style="overflow: hidden;cursor: pointer;background-color: #fff;display: flex;flexDirection: row;align-items: center;position: relative;
+                    <div v-for="(item,index) in connectlist" :key="index" style="overflow: hidden;cursor: pointer;background-color: #192841;display: flex;flexDirection: row;align-items: center;position: relative;
             margin: 14px;margin-top: 4px;border-radius: 5px;padding-bottom: 0;padding-top: 0;position: relative;box-shadow: 0 0 9px rgba(14, 61, 118, .16);">
                         <div style="padding: 20px 0px;overflow: hidden;height: 100%;width: 100%;margin-left: 4px;margin-right: 14px">
                             <div style="overflow: hidden">
@@ -588,7 +555,7 @@
                 <van-cell style="visibility: hidden;padding: 0 !important;" class="walletxt" :border="false"
                           title=""/>
             </div>
-            <div style="border-top: 1px solid #ebedf0;background-color: #fff;height: 44px;padding: 10px 0;width: 100%;position: fixed;bottom: 0">
+            <div style="border-top: 1px solid #ebedf0;background-color: #192841;height: 44px;padding: 10px 0;width: 100%;position: fixed;bottom: 0">
                 <el-row>
                     <el-col :span="12">
                         <div style="width: 80%;margin-left: 10%">
@@ -637,7 +604,7 @@
                           title=""/>
 
             </div>
-            <div style="border-top: 1px solid #ebedf0;background-color: #fff;height: 44px;padding: 10px 0;width: 100%;position: fixed;bottom: 0">
+            <div style="border-top: 1px solid #ebedf0;background-color: #192841;height: 44px;padding: 10px 0;width: 100%;position: fixed;bottom: 0">
                 <el-row>
                     <el-col :span="12">
                         <div style="width: 80%;margin-left: 10%">
@@ -664,7 +631,7 @@
                     {{$t('l.account.index.txt4')}}
                 </div>
                 <div style="margin-top: 20px">
-                    <div @click="languageFn(item)" v-for="item in lang" style="overflow: hidden;cursor: pointer;background-color: #fff;display: flex;flexDirection: row;align-items: center;position: relative;
+                    <div @click="languageFn(item)" v-for="item in lang" style="overflow: hidden;cursor: pointer;background-color: #192841;display: flex;flexDirection: row;align-items: center;position: relative;
             margin: 14px;margin-top: 4px;border-radius: 5px;padding-bottom: 0;padding-top: 0;position: relative;box-shadow: 0 0 9px rgba(14, 61, 118, .16);">
                         <div style="padding: 20px 0px;overflow: hidden;height: 100%;width: 100%;margin-left: 4px;margin-right: 14px">
                             <div style="overflow: hidden">

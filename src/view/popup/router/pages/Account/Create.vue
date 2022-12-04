@@ -21,8 +21,8 @@
                                :placeholder="$t('l.account.create.txt5')"/>
                 </div>
             </van-cell-group>
-            <div style="margin: 16px;">
-                <van-button @click="create" round block type="info">{{$t('l.account.create.btn')}}</van-button>
+            <div class="createBtn">
+                <van-button class="vanBtn" @click="create">{{"Create"}}</van-button>
             </div>
         </div>
     </div>
@@ -125,5 +125,32 @@
 </script>
 
 <style scoped>
+
+
+.createBtn {
+align-content: center;
+}
+
+.vanBtn {
+    font-size: 12px;
+    width: 68px;
+    height: 48px;
+    border-radius: 10px;
+    font-weight: bold;
+    color: #00ffff;
+    border: 1px solid #00ffffa4;
+    background-color: transparent;
+    background-position: center;
+    transition: background 0.4s;
+    margin: 0 auto;
+  }
+
+  .vanBtn:hover {
+    color: #000;
+    text-transform: uppercase;
+    background: #00ffff radial-gradient(circle, transparent 1%, red 1%)
+      center/15000%;
+  }
+
 
 </style>

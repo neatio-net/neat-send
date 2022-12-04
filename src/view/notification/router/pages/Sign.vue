@@ -35,7 +35,7 @@
                 </div>
             </div>
         </div>
-        <div style="border-top: 1px solid #ebedf0;background-color: #fff;height: 44px;padding: 10px 0;width: 100%;position: fixed;bottom: 0">
+        <div style="border-top: 1px solid #ebedf0;background-color: #192841;height: 44px;padding: 10px 0;width: 100%;position: fixed;bottom: 0">
             <el-row>
                 <el-col :span="12">
                     <div style="width: 80%;margin-left: 10%">

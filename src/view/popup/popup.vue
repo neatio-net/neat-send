@@ -1,5 +1,5 @@
 <template>
-  <div style="width: 360px;height: 600px;overflow: scroll;">
+  <div class="mainWindow">
     <router-view></router-view>
   </div>
 </template>
@@ -47,7 +47,7 @@
 
   html {
     color: #000;
-    background-color: #ffffff;
+    background-color: #000000;
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
     font-size: 100%;
@@ -62,7 +62,7 @@
   body {
     width: 100%;
     font-family: Overpass;
-    background-color: #ffffff;
+    background-color: #29242f;
   }
 
   body, button, input, select, textarea {
@@ -155,6 +155,12 @@
     -o-box-sizing: border-box;
     -ms-box-sizing: border-box;
     box-sizing: border-box;
+  }
+
+  .mainWindow {
+    width: 360px;
+    height: 600px;
+    background-color: #000000;
   }
 </style>
 

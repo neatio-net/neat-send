@@ -2,12 +2,12 @@
     <div>
         <div @click="accountCreate" class="account_list">
             <img src="../../../../../assets/add.png"/>
-            <div class="title" style="color: #fff">{{$t('l.account.index.txt')}}</div>
-            <div class="txt" style="color: #fff">{{$t('l.account.index.txt1')}}</div>
+            <div class="title" style="color: #192841">{{$t('l.account.index.txt')}}</div>
+            <div class="txt" style="color: #192841">{{$t('l.account.index.txt1')}}</div>
         </div>
 
         <div @click="accountImport" class="account_list"
-             style="margin-top: 10%;background-color: #fff;">
+             style="margin-top: 10%;background-color: #192841;">
             <img src="../../../../../assets/import.png"/>
             <div class="title txtCr">{{$t('l.account.index.txt2')}}</div>
             <div class="txt txtCr">{{$t('l.account.index.txt3')}}</div>
@@ -26,7 +26,7 @@
                     {{$t('l.account.index.txt4')}}
                 </div>
                 <div style="margin-top: 20px">
-                    <div @click="languageFn(item)" v-for="item in lang" style="overflow: hidden;cursor: pointer;background-color: #fff;display: flex;flexDirection: row;align-items: center;position: relative;
+                    <div @click="languageFn(item)" v-for="item in lang" style="overflow: hidden;cursor: pointer;background-color: #192841;display: flex;flexDirection: row;align-items: center;position: relative;
             margin: 14px;margin-top: 4px;border-radius: 5px;padding-bottom: 0;padding-top: 0;position: relative;box-shadow: 0 0 9px rgba(14, 61, 118, .16);">
                         <div style="padding: 20px 0px;overflow: hidden;height: 100%;width: 100%;margin-left: 4px;margin-right: 14px">
                             <div style="overflow: hidden">

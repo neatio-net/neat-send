@@ -5,7 +5,7 @@ export const l =
         txt: 'Create',
         txt1: 'Create a new wallet',
         txt2: 'Import',
-        txt3: 'Import old wallet',
+        txt3: 'Import existing wallet',
         txt4: 'Language',
       },
       create: {

@@ -334,7 +334,7 @@
                 <div style="text-align: center">
                     <canvas id="canvas"></canvas>
                 </div>
-                <div style="height:64px;padding-bottom: 40px;background: #fff;width: 100%;border-bottom: 1px solid #ebedf0;">
+                <div style="height:64px;padding-bottom: 40px;background: #192841;width: 100%;border-bottom: 1px solid #ebedf0;">
                     <van-col span="4"></van-col>
                     <van-col span="16" class="addrcopy" style="text-align: center;height: 100%;cursor: pointer"
                              v-clipboard:copy="$store.state.wallet.addr"
@@ -385,7 +385,7 @@
                         effect="dark">
                 </el-alert>
 
-                <div style="height:86px;padding-bottom: 40px;background: #fff;width: 100%">
+                <div style="height:86px;padding-bottom: 40px;background: #192841;width: 100%">
                     <van-col span="2"></van-col>
                     <van-col span="20" class="addrcopy"
                              style="border: 1px solid #ebedf0;;text-align: center;height: 100%;cursor: pointer"
