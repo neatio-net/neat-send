@@ -1,9 +1,10 @@
 <template>
     <div>
-        <div style="padding:10px 0px;background: #f7f8fa">
+        <!-- NAV BAR -->
+        <!-- <div style="padding:10px 0px;background: #f7f8fa">
             <van-row>
                 <van-col span="4">
-
+           
                 </van-col>
                 <van-col @click="switchChain=true" span="16"
                          style="text-align: center;line-height: 40px;cursor: pointer">
@@ -12,8 +13,8 @@
                         <van-icon color="#2F4266" name="arrow-down"/>
                     </div>
                 </van-col>
-                <!-- accounts -->
-                <van-col span="4" @click="switchaccountshowfn">
+            
+                <van-col span="4" @click="switchAcc">
                     <div style="overflow: hidden;position: relative;border: 2px solid #037dd6;cursor: pointer;width: 40px;height: 40px;border-radius: 50%">
                         <img v-if="$store.state.wallet.img&&!$store.state.wallet.imgis"
                              style="position: absolute;top: -20px;width: 80px;left: -20px;"
@@ -24,15 +25,20 @@
                     </div>
                 </van-col>
             </van-row>
-        </div>
-        <div style="height:64px;background: #192841;width: 100%;border-bottom: 1px solid #ebedf0;">
-            <van-col @click="connectListfn" span="6" class="addrcopy"
-                     style="text-align: center;height: 100%;cursor: pointer">
-                <div style="margin-top: 18px;">
-                <!-- LOGO -->
-                </div>
+        </div> -->
 
-            </van-col>
+
+        <div style="height:64px;background: #192841;width: 100%;border-bottom: 1px solid #ebedf0;">
+          <van-col span="4" @click="switchAcc">
+                    <div style="overflow: hidden;position: relative;border: 2px solid #037dd6;cursor: pointer;width: 40px;height: 40px;border-radius: 50%">
+                        <img v-if="$store.state.wallet.img&&!$store.state.wallet.imgis"
+                             style="position: absolute;top: -20px;width: 80px;left: -20px;"
+                             :src="$store.state.wallet.img"/>
+                        <img v-if="$store.state.wallet.img&&$store.state.wallet.imgis"
+                             style="position: absolute;width: 40px;"
+                             :src="$store.state.wallet.img"/>
+                    </div>
+                </van-col>
             <van-col span="12" class="addrcopy" style="text-align: center;height: 100%;cursor: pointer"
                      v-clipboard:copy="$store.state.wallet.addr"
                      v-clipboard:success="onCopy"
@@ -54,21 +60,21 @@
                       </span>
                     <el-dropdown-menu slot="dropdown">
                         <el-dropdown-item command="lock" icon="el-icon-lock">
-                            Lock
+                            Lock Wallet
                         </el-dropdown-item>
 
-                        <el-dropdown-item @click="switchaccountshowfn" icon="el-icon-share">
+                        <!-- <el-dropdown-item @click="switchAcc" icon="el-icon-share">
                             Wallets
-                        </el-dropdown-item>
+                        </el-dropdown-item> -->
 
                         <el-dropdown-item command="accountDetails" icon="el-icon-user">
-                            Details
+                          Account Detail
                         </el-dropdown-item>
                         <el-dropdown-item command="viewAsset" icon="el-icon-paperclip">
-                           Explorer
+                          View On Explorer
                         </el-dropdown-item>
                         <el-dropdown-item command="hide" icon="el-icon-delete">
-                            Delete
+                          Manage Accounts
                         </el-dropdown-item>
                         <!-- <el-dropdown-item command="language" icon="el-icon-setting">
                             Language
@@ -88,12 +94,14 @@
                 <span v-if="$store.state.wallet.list">{{$store.state.wallet.list[0].sum}}</span>
                 {{$store.state.wallet.list[0].symbol}}
             </div>
-            <div @click="accountSend" style="text-align: center;margin-top: 14px">
-                <el-button type="primary" icon="el-icon-top-right" circle></el-button>
+            <!-- <div @click="accountSend" style="text-align: center;margin-top: 14px">
+                <el-button type="primary" icon="el-icon-top-right" square></el-button>
                 <div style="color: #037dd6;font-size: 14px;margin-top: 6px">
                     Send
                 </div>
-            </div>
+            </div> -->
+            <button class="btnSend">SEND</button>
+
         </div>
         <div v-if="$store.state.wallet.list" style="margin-top: 20px;">
             <van-tabs :title-active-color="'#037dd6'" v-model:active="activeName">
@@ -167,14 +175,15 @@
             </van-tabs>
         </div>
         <Loginshow :windowis="is" :show="show"></Loginshow>
+         <!-- ACC LIST-->
         <van-popup
                 class="popup"
                 v-model="switchaccountshow"
                 closeable
-                position="right"
+                position="left"
                 :style="{ width: '100%',height: '100%' }">
             <div style="margin-top: 50px;position: relative">
-                <div style="height: 502px;overflow-y: scroll">
+                <div style="height: 502px;">
                     <div v-for="item in accountlist" @click="switchaccount(item)" :key="item.key" style="overflow: hidden;cursor: pointer;background-color: #192841;display: flex;flexDirection: row;align-items: center;position: relative;
             margin: 14px;margin-top: 4px;height: 80px;border-radius: 5px;padding-bottom: 0;padding-top: 0;position: relative;box-shadow: 0 0 9px rgba(14, 61, 118, .16);">
                         <div style="float: left;overflow: hidden;position: relative;margin-left: 14px;cursor: pointer
@@ -218,11 +227,12 @@
                 </div>
             </div>
         </van-popup>
+         <!-- ACC L END -->
         <van-popup
                 class="Transaction popup"
                 v-model="accountDetails"
                 closeable
-                position="right"
+                position="left"
                 :style="{ height: '100%',width:'100%' }">
             <div>
                 <div style="text-align: center;margin-top: 14px;font-weight: 500;font-size: 22px">
@@ -287,7 +297,7 @@
                 class="popup"
                 v-model="showprv"
                 closeable
-                position="right"
+                position="left"
                 :style="{ height: '100%',width:'100%' }">
             <div>
                 <div style="text-align: center;margin-top: 14px;font-weight: 500;font-size: 22px">
@@ -332,7 +342,7 @@
                 class="popup"
                 v-model="hide"
                 closeable
-                position="right"
+                position="left"
                 :style="{ height: '100%',width:'100%' }">
             <div>
                 <div style="text-align: center;margin-top: 14px;font-weight: 500;font-size: 22px">
@@ -362,7 +372,7 @@
                 class="popup"
                 v-model="switchChain"
                 closeable
-                position="right"
+                position="left"
                 :style="{ width: '100%',height: '100%' }">
             <div style="margin-top: 50px;position: relative">
                 <div style="height: 502px;overflow-y: scroll">
@@ -405,7 +415,7 @@
                 class="addChain"
                 v-model="addChain"
                 closeable
-                position="right"
+                position="left"
                 :style="{ width: '100%',height: '100%' }">
             <div style="">
                 <div style="text-align: center;margin-top: 14px;font-weight: 500;font-size: 22px">
@@ -441,7 +451,7 @@
                 class="addChain"
                 v-model="updateChain"
                 closeable
-                position="right"
+                position="left"
                 :style="{ width: '100%',height: '100%' }">
             <div style="">
                 <div style="text-align: center;margin-top: 14px;font-weight: 500;font-size: 22px">
@@ -493,7 +503,7 @@
                 class="Transaction"
                 v-model="connectmodel"
                 closeable
-                position="right"
+                position="left"
                 :style="{ width: '100%',height: '100%' }">
             <div style="">
                 <div style="text-align: center;margin-top: 14px;font-weight: 500;font-size: 22px">
@@ -542,7 +552,7 @@
                 v-loading="nftloading"
                 v-model="addnft"
                 closeable
-                position="right"
+                position="left"
                 :style="{ width: '100%',height: '100%' }">
             <div style="text-align: center;margin-top: 14px;font-weight: 500;font-size: 22px">
                 Import NFT
@@ -575,7 +585,7 @@
         <van-popup
                 v-model="selectnft"
                 closeable
-                position="right"
+                position="left"
                 :style="{ width: '100%',height: '100%' }">
             <div style="text-align: center;margin-top: 14px;font-weight: 500;font-size: 22px">
                 {{nftmodel.name}}
@@ -621,10 +631,10 @@
                 </el-row>
             </div>
         </van-popup>
-        <van-popup
+        <!-- <van-popup
                 v-model="language"
                 closeable
-                position="right"
+                position="left"
                 :style="{ width: '100%',height: '100%' }">
             <div style="">
                 <div style="text-align: center;margin-top: 14px;font-weight: 500;font-size: 22px">
@@ -649,7 +659,7 @@
 
                 </div>
             </div>
-        </van-popup>
+        </van-popup> -->
         <van-dialog showCancelButton :cancelButtonText="'Cancel'" :confirmButtonText="'Send'" :beforeClose="sendNft"
                     v-model:show="shownftis" title="Send Nft">
             <van-cell :border="false" :title="$t('l.account.send.txt')"/>
@@ -1535,7 +1545,7 @@
         }
         this.switchaccountshow = false;
       },
-      async switchaccountshowfn() {
+      async switchAcc() {
         this.accountlist = await this.$g.account.selectAll();
         this.switchaccountshow = true;
       },
@@ -1675,6 +1685,33 @@
 </script>
 
 <style>
+.popup {
+  background-color: #000000;
+}
+
+  .btnSend {
+  font-size: 12px;
+  width: 120px;
+  height: 36px;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 14px;
+  color: #00ffff;
+  border: 1px solid #00ffffa4;
+  background-color: transparent;
+  background-position: center;
+  transition: background 0.4s;
+  margin: 0 10px;
+}
+
+
+.btnSend:hover {
+  color: #000;
+  text-transform: uppercase;
+  background: #00ffff radial-gradient(circle, transparent 1%, red 1%)
+    center/15000%;
+}
+
     .el-image-viewer__wrapper {
         z-index: 2100 !important;
     }
@@ -1709,7 +1746,7 @@
     }
 
     .van-tabs__wrap {
-        border-bottom: 1px solid #ebedf0;
+        border-bottom: 1px solid #496858;
     }
 
     .van-tabs__line {
@@ -1718,12 +1755,16 @@
     }
 
     .el-button--primary {
-        color: #FFF;
+        color: #496785;
         background-color: #037dd6 !important;
-        border-color: #037dd6f !important;
+        border-color: #00BFFF !important;
+    }
+
+    .addrcopy {
+        color: #496785 !important;
     }
 
     .addrcopy:hover {
-        background: #f2f3f4;
+        background: #00BFFF !important;
     }
 </style>

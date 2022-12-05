@@ -16,7 +16,7 @@
                     style="border-radius: 50%;width: 52px;padding: 0px;height: 52px;position: absolute;bottom: 2%;left: 2%;"
                     icon="setting-o" type="info">
         </van-button>
-        <van-popup
+        <!-- <van-popup
                 v-model="language"
                 closeable
                 position="right"
@@ -43,7 +43,7 @@
 
                 </div>
             </div>
-        </van-popup>
+        </van-popup> -->
     </div>
 </template>
 

@@ -66,7 +66,7 @@
   }
 
   body, button, input, select, textarea {
-    color: #333435;
+    color: #00ffff;
     outline: none;
   }
 
