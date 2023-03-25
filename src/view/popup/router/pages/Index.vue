@@ -135,7 +135,7 @@
                         </div>
                     </div>
                 </van-tab>
-                <van-tab title="NFT">
+                <!-- <van-tab title="NFT-test">
                     <van-collapse v-model="activeNames" v-if="nftlist.length!=0">
                         <van-collapse-item
                                 v-for="item in nftlist"
@@ -171,7 +171,7 @@
                         <div style="height: 20px;width: 100%">
                         </div>
                     </div>
-                </van-tab>
+                </van-tab> -->
             </van-tabs>
         </div>
         <Loginshow :windowis="is" :show="show"></Loginshow>
@@ -1710,6 +1710,10 @@
   text-transform: uppercase;
   background: #00ffff radial-gradient(circle, transparent 1%, red 1%)
     center/15000%;
+}
+
+.van-tabs__nav {
+  background: #000000;
 }
 
     .el-image-viewer__wrapper {
