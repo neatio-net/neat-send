@@ -234,7 +234,7 @@
                     {{parseFloat($g.coin.sum).toLocaleString()}} {{$g.coin.symbol}}
                 </div>
                 <div>
-                    <div style="color: #646566;font-size: 18px;padding-left: 10px;padding-top:40px; ">
+                    <div style="color: #00FFFF;font-size: 18px;padding-left: 10px;padding-top:40px; ">
                         Token Contract Address:
                     </div>
                     <div style="position: relative;font-size: 18px;padding-left: 10px;padding-right:100px;padding-top: 20px;
@@ -250,13 +250,13 @@
                             </el-button>
                         </div>
                     </div>
-                    <div style="color: #646566;font-size: 18px;padding-left: 10px;padding-top: 20px; ">
+                    <div style="color: #00FFFF;font-size: 18px;padding-left: 10px;padding-top: 20px; ">
                         Token Decimal:
                     </div>
                     <div style="font-size: 18px;padding-left: 10px;padding-top: 20px; ">
                         {{$g.coin.decimals}}
                     </div>
-                    <div style="color: #646566;font-size: 18px;padding-left: 10px;padding-top: 20px; ">
+                    <div style="color: #00FFFF;font-size: 18px;padding-left: 10px;padding-top: 20px; ">
                         Network:
                     </div>
                     <div style="font-size: 18px;padding-left: 10px;padding-top: 20px; ">

@@ -160,7 +160,7 @@
                         </van-collapse-item>
                     </van-collapse>
                     <div style="text-align: center;margin-top: 20px">
-                        <div style="color: #646566;font-size: 14px">
+                        <div style="color: #00FFFF;font-size: 14px">
                             Don't see your NFT?
                         </div>
                         <div>

@@ -30,7 +30,7 @@
   }
 
   .walletxt {
-    color: #646566 !important;
+    color: #00FFFF !important;
   }
 
   .van-nav-bar__title {
@@ -51,7 +51,7 @@
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
     font-size: 100%;
-    font-family: Helvetica Neue For Number, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-family: Pirulen, Helvetica Neue For Number, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Helvetica Neue, Helvetica, Arial, sans-serif;
   }
 
   body, div, dl, dt, dd, ul, li, pre, form, fieldset, select, input, textarea, button, p, blockquote, th, td, img, iframe {
