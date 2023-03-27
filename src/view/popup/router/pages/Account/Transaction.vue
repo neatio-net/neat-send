@@ -353,8 +353,7 @@
 
                 <div style="position: absolute;bottom: 20px;width: 100%">
                     <div style="margin: 16px;">
-                        <van-button @click="openblock" round block type="info">View account at blockscout.com
-                        </van-button>
+                        <van-button @click="openblock" round block type="info">View account on scan.neatio.net
                     </div>
                     <div style="margin: 16px;">
                         <van-button @click="exportprivate" round block type="info">

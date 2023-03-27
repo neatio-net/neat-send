@@ -45,7 +45,7 @@
                      v-clipboard:error="onError">
                 <el-tooltip class="item" effect="dark" :content="copytxt" placement="bottom">
                     <div>
-                        <div style="color: #323233;font-size: 18px;margin-top: 10px">{{$store.state.wallet.name}}</div>
+                        <div style="color: #00ffff;font-size: 18px;margin-top: 10px">{{$store.state.wallet.name}}</div>
                         <div style="margin-top: 4px">{{$g.subname($store.state.wallet.addr)}}
                             <img style="width: 10px" src="../../../../assets/copy.png"></div>
                     </div>
@@ -282,7 +282,7 @@
                 </div>
                 <div style="position: absolute;bottom: 20px;width: 100%">
                     <div style="margin: 16px;">
-                        <van-button @click="openblock" round block type="info">View account at blockscout.com
+                        <van-button @click="openblock" round block type="info">View account on scan.neatio.net
                         </van-button>
                     </div>
                     <div style="margin: 16px;">
@@ -1690,6 +1690,7 @@
 }
 
   .btnSend {
+  
   font-size: 12px;
   width: 120px;
   height: 36px;
@@ -1698,10 +1699,14 @@
   font-size: 14px;
   color: #00ffff;
   border: 1px solid #00ffffa4;
+  border-radius: 10px;
+  box-shadow: 0 0 40px #00ffff93;
   background-color: transparent;
   background-position: center;
   transition: background 0.4s;
-  margin: 0 10px;
+  position:relative;
+  left: 33.33%;
+  margin: 24px auto;
 }
 
 
@@ -1713,7 +1718,7 @@
 }
 
 .van-tabs__nav {
-  background: #000000;
+  background: #000000 !important;
 }
 
     .el-image-viewer__wrapper {
@@ -1722,10 +1727,12 @@
 
     .addChain .van-cell {
         padding: 6px 16px;
+        color: #000 !important;
     }
 
     .addChain .van-field {
         padding: 0px 16px 6px 16px;
+        color: #000 !important;
 
     }
 
@@ -1764,8 +1771,12 @@
         border-color: #00BFFF !important;
     }
 
+    .van-tab--active{
+      color: #000 !important;
+    }
+
     .addrcopy {
-        color: #496785 !important;
+        color: #00FFFF !important;
     }
 
     .addrcopy:hover {

@@ -353,6 +353,7 @@
 
     .send .van-field {
         padding-top: 0 !important;
+        color: #000 !important;
     }
 
     .send textarea {
