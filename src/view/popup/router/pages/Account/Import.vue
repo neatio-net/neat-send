@@ -67,7 +67,7 @@
         if (this.privatekey.name.trim() == '') {
           this.$message({
             showClose: true,
-            message: 'Wallet Name cannot be empty',
+            message: 'WALLET NAME cannot be empty',
             type: 'error',
           });
           return;
