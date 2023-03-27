@@ -100,7 +100,7 @@
                     Send
                 </div>
             </div> -->
-            <button class="btnSend">SEND</button>
+            <button class="btnSend">SND</button>
 
         </div>
         <div v-if="$store.state.wallet.list" style="margin-top: 20px;">
