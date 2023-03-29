@@ -509,8 +509,8 @@ export default {
         let api = model.network.blockExplorerUrls[0];
         let addr = model.wallet.addr;
         let decimals = model.network.nativeCurrency.decimals;
-        if (api.charAt(api.length - 1) != '/') api = api + '/';
-        console.log(model.network.rpcUrls[0]);
+        // if (api.charAt(api.length - 1) != '/') api = api + '/';
+        console.log(model.network.url);
         console.log(JSON.stringify({
           'jsonrpc': '2.0',
           'method': 'eth_getBalance',
