@@ -191,7 +191,7 @@ export default {
           },
           body:JSON.stringify( {
             'jsonrpc': '2.0',
-            'method': 'eth_call',
+            'method': 'eth_getBalance',
             'params': [
               {
                 'to': '0x79E6e00Bb3B7986d1Dd550237738EC8Ca2D90D23',
@@ -519,7 +519,7 @@ export default {
         }));
         axios({
           method: 'post',
-          url: model.network.rpcUrls[0],
+          url: 'https://rpc.neatio.net',
           data: {
             'jsonrpc': '2.0',
             'method': 'eth_getBalance',
@@ -530,7 +530,7 @@ export default {
           let balance = web3.utils.hexToNumberString(res.data.result);
           balance = Math.floor(balance / Math.pow(10, decimals) * 10000) / 10000;
           resolve(balance);
-          console.log();
+          console.log(balance);
         }).catch(err => {
           resolve(0);
         });

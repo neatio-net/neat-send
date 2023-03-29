@@ -132,6 +132,7 @@ align-content: center;
 }
 
 .vanBtn {
+    
     font-size: 12px;
     width: 68px;
     height: 48px;
@@ -141,7 +142,7 @@ align-content: center;
     border: none;
     border: 1px solid #00ffffa4;
     border-radius: 10px;
-    box-shadow: 0 0 40px #00bfff93;
+    box-shadow: 0 0 40px #00ffff93;
     background-color: transparent;
     background-position: center;
     transition: background 0.4s;
